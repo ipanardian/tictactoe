@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
     <string name="next_player">Next Player: X</string>
+    <string name="game_draw">Draw</string>
 </resources>

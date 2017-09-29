@@ -3,7 +3,6 @@ package com.ipanardian.tictactoe
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -14,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private var squares = mutableMapOf<Int, String>()
     private var xIsNext = true
     private var winner: String? = null
+    private val totalCell = 9
 
     private val lines: Array<IntArray> = arrayOf(
             intArrayOf(0,1,2),
@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun playGame(cellID: Int, buSellected: Button) {
-        val tvNextPlayer = findViewById(R.id.tvNextPlayer) as TextView
         if (winner != null) {
             Toast.makeText(this, "Game Is Over", Toast.LENGTH_LONG).show()
             return
@@ -66,17 +65,12 @@ class MainActivity : AppCompatActivity() {
             buSellected.setBackgroundColor(Color.BLUE)
         }
         buSellected.text = squares[cellID]
+        buSellected.isEnabled = false
 
         xIsNext = !xIsNext
 
         winner = checkWinner()
-        if (winner != null) {
-            tvNextPlayer.text = "Winner: $winner"
-            tvNextPlayer.setTextColor(Color.MAGENTA)
-        }
-        else tvNextPlayer.text = "Next Player: ${if (xIsNext) "X" else "O"}"
-
-        buSellected.isEnabled = false
+        updateGuideText()
     }
 
     private fun checkWinner(): String? {
@@ -89,5 +83,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return null
+    }
+
+    private fun updateGuideText() {
+        val tvNextPlayer = findViewById(R.id.tvNextPlayer) as TextView
+        if (winner != null) {
+            tvNextPlayer.text = "Winner: $winner"
+            tvNextPlayer.setTextColor(Color.MAGENTA)
+        }
+        else if (squares.size == totalCell) {
+            tvNextPlayer.setText(R.string.game_draw)
+        }
+        else tvNextPlayer.text = "Next Player: ${if (xIsNext) "X" else "O"}"
     }
 }
