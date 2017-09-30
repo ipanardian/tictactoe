@@ -3,6 +3,7 @@ package com.ipanardian.tictactoe
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun playGame(cellID: Int, buSellected: Button) {
         if (winner != null) {
-            Toast.makeText(this, "Game Is Over", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.game_over, Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -90,10 +91,43 @@ class MainActivity : AppCompatActivity() {
         if (winner != null) {
             tvNextPlayer.text = "Winner: $winner"
             tvNextPlayer.setTextColor(Color.MAGENTA)
+            showSnackBarNewGame()
         }
         else if (squares.size == totalCell) {
             tvNextPlayer.setText(R.string.game_draw)
+            showSnackBarNewGame()
         }
         else tvNextPlayer.text = "Next Player: ${if (xIsNext) "X" else "O"}"
+    }
+
+    fun showSnackBarNewGame() {
+        var snackBarNewGame: Snackbar  = Snackbar.make(
+                findViewById(R.id.tbLayout),
+                R.string.game_over,
+                Snackbar.LENGTH_INDEFINITE)
+        snackBarNewGame.setAction(R.string.new_game, {
+            newGame()
+        }).show()
+    }
+
+    private fun newGame() {
+        squares = mutableMapOf()
+        xIsNext = true
+        winner = null
+
+        val tvNextPlayer = findViewById(R.id.tvNextPlayer) as TextView
+        tvNextPlayer.text = "Next Player: X"
+        tvNextPlayer.setTextColor(Color.GRAY)
+
+        resetButton()
+    }
+
+    private fun resetButton() {
+        for (i in 1..totalCell) {
+            var button: Button? = findViewById(resources.getIdentifier("bu$i", "id", packageName)) as Button
+            button?.text = ""
+            button?.isEnabled = true
+            button?.setBackgroundResource(R.drawable.abc_btn_default_mtrl_shape)
+        }
     }
 }

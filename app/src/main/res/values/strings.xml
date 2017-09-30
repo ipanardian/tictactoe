@@ -2,4 +2,6 @@
     <string name="app_name">Tic Tac Toe</string>
     <string name="next_player">Next Player: X</string>
     <string name="game_draw">Draw</string>
+    <string name="new_game">New Game</string>
+    <string name="game_over">Game is Over</string>
 </resources>
