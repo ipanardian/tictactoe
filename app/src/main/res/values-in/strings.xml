@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="next_player">Pemain Berikutnya</string>
+    <string name="next_player_x">Pemain Berikutnya: X</string>
+    <string name="game_draw">Seri</string>
+    <string name="new_game">Main Lagi</string>
+    <string name="game_over">Permainan Berakhir</string>
+    <string name="winner">Pemenang</string>
+</resources>
