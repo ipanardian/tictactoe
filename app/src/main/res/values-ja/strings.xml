@@ -7,4 +7,5 @@
     <string name="new_game">新しいゲーム</string>
     <string name="game_over">ゲームは終わりだ</string>
     <string name="winner">勝者</string>
+    <string name="about">約</string>
 </resources>

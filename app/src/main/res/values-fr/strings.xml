@@ -7,4 +7,5 @@
     <string name="new_game">Nouveau jeu</string>
     <string name="game_over">Le jeu est fini</string>
     <string name="winner">Gagnant</string>
+    <string name="about">sur</string>
 </resources>

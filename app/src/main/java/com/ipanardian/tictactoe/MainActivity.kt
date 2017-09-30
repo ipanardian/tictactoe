@@ -5,6 +5,12 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v7.app.AlertDialog
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -33,6 +39,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(
+                R.menu.main_menu,
+                menu
+        )
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item != null) when (item.itemId) {
+            R.id.menuAbout -> aboutDialog()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun buttonClick(view: View) {
@@ -132,5 +154,26 @@ class MainActivity : AppCompatActivity() {
             button?.isEnabled = true
             button?.setBackgroundResource(R.drawable.abc_btn_default_mtrl_shape)
         }
+    }
+
+    private fun aboutDialog() {
+        var aboutContent = SpannableString("Tic Tac Toe v0.1.0\n" +
+                "beta version\n" +
+                "This game is open source project\n\n" +
+                "Web: http://ipanardian.com\n" +
+                "Github: https://github.com/ipanardian/tictactoe")
+        Linkify.addLinks(aboutContent, Linkify.WEB_URLS)
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.about)
+        builder.setMessage(aboutContent)
+        builder.setPositiveButton(android.R.string.yes, { dialog, _ ->
+            dialog.dismiss()
+        })
+        val alert: AlertDialog = builder.create()
+        alert.show()
+
+        var textView = alert.findViewById(android.R.id.message) as TextView
+        textView.movementMethod = LinkMovementMethod.getInstance()
     }
 }

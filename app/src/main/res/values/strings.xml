@@ -6,4 +6,5 @@
     <string name="new_game">New Game</string>
     <string name="game_over">Game is Over</string>
     <string name="winner">Winner</string>
+    <string name="about">About</string>
 </resources>
