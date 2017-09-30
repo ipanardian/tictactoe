@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="next_player">次のプレイヤー</string>
+    <string name="next_player_x">次のプレイヤー: X</string>
+    <string name="game_draw">ドロー</string>
+    <string name="new_game">新しいゲーム</string>
+    <string name="game_over">ゲームは終わりだ</string>
+    <string name="winner">勝者</string>
+</resources>

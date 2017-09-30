@@ -1,5 +1,6 @@
 package com.ipanardian.tictactoe
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     private var xIsNext = true
     private var winner: String? = null
     private val totalCell = 9
+    private val X = "X"
+    private val O = "O"
 
     private val lines: Array<IntArray> = arrayOf(
             intArrayOf(0,1,2),
@@ -58,11 +61,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (xIsNext) {
-            squares[cellID] = "X"
+            squares[cellID] = X
             buSellected.setBackgroundColor(Color.GREEN)
         }
         else {
-            squares[cellID] = "O"
+            squares[cellID] = O
             buSellected.setBackgroundColor(Color.BLUE)
         }
         buSellected.text = squares[cellID]
@@ -89,7 +92,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateGuideText() {
         val tvNextPlayer = findViewById(R.id.tvNextPlayer) as TextView
         if (winner != null) {
-            tvNextPlayer.text = "Winner: $winner"
+            tvNextPlayer.text = "${resources.getString(R.string.winner)}: $winner"
             tvNextPlayer.setTextColor(Color.MAGENTA)
             showSnackBarNewGame()
         }
@@ -97,11 +100,11 @@ class MainActivity : AppCompatActivity() {
             tvNextPlayer.setText(R.string.game_draw)
             showSnackBarNewGame()
         }
-        else tvNextPlayer.text = "Next Player: ${if (xIsNext) "X" else "O"}"
+        else tvNextPlayer.text = "${resources.getString(R.string.next_player)}: ${if (xIsNext) X else O}"
     }
 
-    fun showSnackBarNewGame() {
-        var snackBarNewGame: Snackbar  = Snackbar.make(
+    private fun showSnackBarNewGame() {
+        val snackBarNewGame: Snackbar  = Snackbar.make(
                 findViewById(R.id.tbLayout),
                 R.string.game_over,
                 Snackbar.LENGTH_INDEFINITE)
@@ -116,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         winner = null
 
         val tvNextPlayer = findViewById(R.id.tvNextPlayer) as TextView
-        tvNextPlayer.text = "Next Player: X"
+        tvNextPlayer.text = "${resources.getString(R.string.next_player)}: $X"
         tvNextPlayer.setTextColor(Color.GRAY)
 
         resetButton()
@@ -124,7 +127,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetButton() {
         for (i in 1..totalCell) {
-            var button: Button? = findViewById(resources.getIdentifier("bu$i", "id", packageName)) as Button
+            val button: Button? = findViewById(resources.getIdentifier("bu$i", "id", packageName)) as Button
             button?.text = ""
             button?.isEnabled = true
             button?.setBackgroundResource(R.drawable.abc_btn_default_mtrl_shape)

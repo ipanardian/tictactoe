@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="20dp"
-        android:text="@string/next_player"
+        android:text="@string/next_player_x"
         android:textSize="12pt" />
 
     <TableRow
