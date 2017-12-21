@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tbLayout" type="id"></item>
+    <item name="tvNextPlayer" type="id"></item>
+    <item name="bu1" type="id"></item>
+    <item name="bu2" type="id"></item>
+    <item name="bu3" type="id"></item>
+    <item name="bu4" type="id"></item>
+    <item name="bu5" type="id"></item>
+    <item name="bu6" type="id"></item>
+    <item name="bu7" type="id"></item>
+    <item name="bu8" type="id"></item>
+    <item name="bu9" type="id"></item>
+</resources>

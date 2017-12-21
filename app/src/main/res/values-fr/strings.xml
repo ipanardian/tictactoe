@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tic Tac Toe</string>
-    <string name="next_player">Joueur suivant</string>
+    <string name="next_player">Joueur suivant: %1$s</string>
     <string name="next_player_x">Joueur suivant: X</string>
     <string name="game_draw">Dessiner</string>
     <string name="new_game">Nouveau jeu</string>
     <string name="game_over">Le jeu est fini</string>
-    <string name="winner">Gagnant</string>
+    <string name="winner">Gagnant: %1$s</string>
     <string name="about">sur</string>
 </resources>

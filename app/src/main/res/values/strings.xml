@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
-    <string name="next_player">Next Player</string>
+    <string name="next_player">Next Player: %1$s</string>
     <string name="next_player_x">Next Player: X</string>
     <string name="game_draw">Draw</string>
     <string name="new_game">New Game</string>
     <string name="game_over">Game is Over</string>
-    <string name="winner">Winner</string>
+    <string name="winner">Winner: %1$s</string>
     <string name="about">About</string>
+    <string name="about_content">Tic Tac Toe v1.1.0\nThis game is open source project\n\nWeb: http://ipanardian.com\nGithub: https://github.com/ipanardian/tictactoe</string>
 </resources>
