@@ -9,7 +9,9 @@
 
 package com.ipanardian.tictactoe
 
+import android.annotation.TargetApi
 import android.graphics.Color
+import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
 import android.widget.Button
@@ -42,39 +44,93 @@ class TicTacToeActivityUI: AnkoComponent<TicTacToeActivity> {
 
                 button {
                     id = R.id.bu1
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu2
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu3
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
             }.lparams(width = matchParent, height = matchParent)
             tableRow {
                 gravity = Gravity.CENTER
 
                 button {
                     id = R.id.bu4
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu5
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu6
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
             }.lparams(width = matchParent, height = matchParent)
             tableRow {
                 gravity = Gravity.CENTER
 
                 button {
                     id = R.id.bu7
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu8
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
                 button {
                     id = R.id.bu9
-                }.lparams(width = dip(100), height = dip(100))
+                }.lparams(width = dip(100), height = dip(100)) {
+                    bottomMargin = dip(5)
+                    rightMargin = dip(5)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        marginEnd = dip(5)
+                    }
+                }
             }.lparams(width = matchParent, height = matchParent)
         }.applyRecursively { view -> when(view) {
             is Button -> {

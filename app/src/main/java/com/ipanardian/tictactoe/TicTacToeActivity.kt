@@ -77,13 +77,15 @@ class TicTacToeActivity : AppCompatActivity() {
             return
         }
 
-        if (xIsNext) {
-            squares[cellID] = X
-            btnSelected.setBackgroundColor(Color.GREEN)
-        }
-        else {
-            squares[cellID] = O
-            btnSelected.setBackgroundColor(Color.BLUE)
+        when {
+            xIsNext -> {
+                squares[cellID] = X
+                btnSelected.setBackgroundColor(Color.GREEN)
+            }
+            else -> {
+                squares[cellID] = O
+                btnSelected.setBackgroundColor(Color.BLUE)
+            }
         }
         btnSelected.text = squares[cellID]
         btnSelected.isEnabled = false
